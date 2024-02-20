@@ -14,7 +14,10 @@ function App() {
   }
 
   const completedtodo = (id) => {
-    setTodos((prev)=> prev.map(prevtodo=>(prevtodo.id === id)? {...prevtodo, completed: !prevtodo.completed}: prevtodo))
+    setTodos((prev)=> 
+      prev.map(prevtodo=>
+        (prevtodo.id === id)? 
+        {...prevtodo, completed: !prevtodo.completed}: prevtodo))
   }
 
   const deletedtodo = (id) => {
@@ -24,8 +27,7 @@ function App() {
 const copytodo = (todo) => {
   console.log(todo)
   navigator.clipboard.writeText(todo)
-  alert("Todo copied to clipboard")
-  
+  alert("Todo copied")
 }
 
   useEffect(() => {
